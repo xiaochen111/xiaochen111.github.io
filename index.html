@@ -6,7 +6,40 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<p>hello world!!!</p>
+	<div id="slide_5">
+	    <div class="content">
+	        <ul class="j_slideLists">
+	            <li><a href="#" style="background:#E2015F url(images/slide_8_1.jpg) no-repeat center 0;">描述内容1</a></li>
+	            <li><a href="#" style="background:#DED4A1 url(images/slide_8_2.jpg) no-repeat center 0;">描述内容2</a></li>
+	            <li><a href="#" style="background:#BACFD4 url(images/slide_8_3.jpg) no-repeat center 0;">描述内容3</a></li>
+	            <li><a href="#" style="background:#98908E url(images/slide_8_4.jpg) no-repeat center 0;">描述内容4</a></li>
+	        </ul>
+	    </div>
+	    <div class="tag">
+	        <ul class="j_slideTags">
+	            <li class="current">1</li>
+	            <li>2</li>
+	            <li>3</li>
+	            <li>4</li>
+	            <li>5</li>
+	        </ul>
+	    </div>
+	   <!--  <div class="btn">
+	        <a href="javascript:void(0);" target="_self" class="btnPrev j_slidePrev"></a>
+	        <a href="javascript:void(0);" target="_self" class="btnNext j_slideNext"></a>
+	    </div> -->
+	</div>
+
+
 	<script src="js/mouse.js"></script>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.slide.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.snippet.min.js"></script>
+    <script>
+    	$(function(){
+    		$("#slide_5").slide({ trigger: "click", effect: "scrollx", auto: true, seamless: true, duration: 600, easing: "easeOutCirc" });
+    	})
+    </script>
 </body>
 </html>
