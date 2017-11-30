@@ -17,7 +17,6 @@ gulp.task('fileConcat',function(){
 })
 
 gulp.task('less',function(){
-	console.log('2')
 	gulp.src('./css/*.less')  // './css/**/*.less' 表示css目录下的所有目录的less文件
 		// 借助less
         .pipe(less())
