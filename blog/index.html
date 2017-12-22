@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/app.css">
     <title>blog</title>
 </head>
 <body>
     
     <!-- banner -->
-    <div id="slide_5">
+    <!-- <div id="slide_5">
 	    <div class="content">
 	        <ul class="j_slideLists">
 	            <li><a href="#" style="background:#E2015F url(images/slide_8_1.jpg) no-repeat center 0;">描述内容1</a></li>
@@ -28,7 +29,19 @@
 	            <li>5</li>
 	        </ul>
 	    </div>
-	</div>
+	</div> -->
+    <!-- ./file/dream.mp3 -->
+    <audio   src="./file/dream.mp3" style="display:none">
+        你的浏览器不支持audio标签
+    </audio>
+
+    <div class="radioBox">
+        <div class="play-control">
+            <i class="fa fa-backward m-play btn1" title="上一曲"></i>
+            <i class="fa fa-play m-change btn2" title="播放/暂停" onclick='player.playFn(this)'></i>
+            <i class="fa fa-forward m-next btn3" title="下一曲"></i>
+        </div>
+    </div>
 
 
 
@@ -39,8 +52,34 @@
     <script src="./js/banner.js"></script>
     <script>
     	$(function(){
-    		$("#slide_5").slide({ trigger: "click", effect: "scrollx", auto: true, seamless: true, duration: 600, easing: "easeOutCirc" });
+            //banner
+    		// $("#slide_5").slide({ trigger: "click", effect: "scrollx", auto: true, seamless: true, duration: 600, easing: "easeOutCirc" });
+
     	})
+
+
+
+        var myAudio = $("audio")[0];
+        var duration = parseInt(myAudio.duration) ;
+        console.log(duration)
+        var singerInfo = [{
+            singer:'任贤齐',
+            song:'有梦的人'
+        }];
+
+        var player = {
+            play:false, //false 暂停  / true 播放
+            playFn:function(obj){ //播放方法
+                if(!this.play){
+                    myAudio.play();
+                    $(obj).removeClass('fa-play').addClass('fa-pause');
+                }else{
+                    myAudio.pause();
+                    $(obj).removeClass('fa-pause').addClass('fa-play');
+                }
+                this.play = !this.play;
+            }
+        }
     </script>
 </body>
 </html>
