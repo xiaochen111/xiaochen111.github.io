@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/app.css">
+    <title>blog</title>
+</head>
+<body>
+    
+    <!-- banner -->
+    <div id="slide_5">
+	    <div class="content">
+	        <ul class="j_slideLists">
+	            <li><a href="#" style="background:#E2015F url(images/slide_8_1.jpg) no-repeat center 0;">描述内容1</a></li>
+	            <li><a href="#" style="background:#DED4A1 url(images/slide_8_2.jpg) no-repeat center 0;">描述内容2</a></li>
+	            <li><a href="#" style="background:#BACFD4 url(images/slide_8_3.jpg) no-repeat center 0;">描述内容3</a></li>
+	            <li><a href="#" style="background:#98908E url(images/slide_8_4.jpg) no-repeat center 0;">描述内容4</a></li>
+	        </ul>
+	    </div>
+	    <div class="tag">
+	        <ul class="j_slideTags">
+	            <li class="current">1</li>
+	            <li>2</li>
+	            <li>3</li>
+	            <li>4</li>
+	            <li>5</li>
+	        </ul>
+	    </div>
+	</div>
+
+
+
+
+
+
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/banner.js"></script>
+    <script>
+    	$(function(){
+    		$("#slide_5").slide({ trigger: "click", effect: "scrollx", auto: true, seamless: true, duration: 600, easing: "easeOutCirc" });
+    	})
+    </script>
+</body>
+</html>

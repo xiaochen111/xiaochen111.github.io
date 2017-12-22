@@ -1,0 +1,245 @@
+body{
+	font-family: '微软雅黑'; font-size: 12px;
+}
+
+li{list-style: none;}
+
+div:after,ul:after{
+	content:'';display:block;clear:both;height:0;overflow:hidden;visibility:hidden;
+}
+.fl{float: left;}
+.fr{float: right;}
+
+.hide{display: none;}
+.clearfix{clear: both; zoom: 0}
+@box_shadow:2px 2px 5px #eaeffd inset;
+@border:1px solid #cad4e2;
+
+// 滚动条样式
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar{  
+  width: 8px;  
+  height: 8px; //横向滚动条
+  background-color: #F5F5F5;  
+} 
+/*定义滚动条轨道 内阴影+圆角*/ 
+::-webkit-scrollbar-track  
+{  
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+  border-radius: 10px;  
+  background-color: #F5F5F5;  
+}
+/*定义滑块 内阴影+圆角*/ 
+::-webkit-scrollbar-thumb  
+{  
+  border-radius: 10px;  
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+  background-color: #555;  
+} 
+
+//三角
+.triangle (top,@w:5px,@color:#ccc){
+  border-style:solid dashed dashed dashed;
+  border-color:@color transparent transparent transparent;
+  border-width:@w;
+}
+.triangle (right,@w:5px,@color:#ccc){
+  border-style:dashed solid dashed dashed;
+  border-color:transparent @color transparent transparent;
+  border-width:@w;
+}
+.triangle (bottom,@w:5px,@color:#ccc){
+  border-style:dashed dashed solid dashed;
+  border-color:transparent transparent @color transparent;
+  border-width:@w;
+}
+.triangle (left,@w:5px,@color:#ccc){
+  border-style:dashed dashed dashed solid;
+  border-color:transparent transparent transparent @color;
+  border-width:@w;
+}
+// 一些公共方法
+.bgCol(@col){
+    background-color: @col;
+}
+.lh(@height){
+   line-height: @height;
+   height: @height;
+}
+.tc(){
+	text-align: center;
+}
+.tr(){
+    text-align: right;
+}
+.tl(){
+    text-align: left;
+}
+.tind(@bj){
+    text-indent: @bj;
+}
+.cur(){
+	cursor: pointer;
+}
+.ft(@size){
+   font-size: @size;
+}
+.wh(@width,@heigth){
+	width: @width; height: @heigth;
+}
+.border(@col:#e6e6e6,@size:1px){
+   border:@size solid @col;
+}
+.bor_b(@col:#ccc,@size:1px){
+	border-bottom:@size solid @col;
+}
+.bor_r(@col:#ccc,@size:1px){
+  border-right:@size solid @col;
+}
+.bor_l(@col:#ccc,@size:1px){
+  border-left:@size solid @col;
+}
+.bor_t(@col:#ccc,@size:1px){
+  border-top:@size solid @col;
+}
+.bor_ra(@size){
+  border-radius:@size; 
+}
+.pt(@bj){
+	padding-top: @bj;
+}
+.pb(@bj){
+	padding-bottom: @bj;
+}
+.pl(@bj){
+	padding-left: @bj;
+}
+.pr(@bj){
+	padding-right: @bj;
+}
+.mt(@bj){
+    margin-top: @bj;
+}
+.mb(@bj){
+    margin-bottom: @bj;
+}
+.ml(@bj){
+    margin-left: @bj;
+}
+.mr(@bj){
+    margin-right: @bj;
+}
+.pos_r(){
+	position: relative;
+}
+.pos_a(){
+	position: absolute;
+}
+.pos_f(){
+  position: fixed;
+}
+.buttonStyle(@width, @height, @bor_radius, @bg, @col){ 
+	 border: none; outline: none; width: @width; height: @height; border-radius: @bor_radius;background: @bg; color: @col; cursor: pointer;
+}
+//定位居中
+.pos-box(@w:600px,@h:360px,@pos:absolute){
+  width: @w;
+  height: @h;
+  position: @pos;
+  left: 50%;
+  top: 50%;
+  margin-left: -@w / 2;
+  margin-top: -@h / 2;
+}
+.overhide(){
+    overflow: hidden;text-overflow: ellipsis; white-space: nowrap;  
+}
+.boxsize(){
+    box-sizing:border-box;-webkit-box-sizing:border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*reset*/
+.reset_css()
+{
+    /* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+    font-family:"微软雅黑";
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+    /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+    font: 12px/1 Tahoma, Helvetica, Arial,"微软雅黑", "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { text-decoration: none; }
+a:hover { text-decoration:none; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+} 
