@@ -27,9 +27,27 @@
 	.wh(800px,80px);.border();.boxsize();padding:0 30px;
 	background: url('../images/playerBg.png');
 	.play-control{
-		.wh(165px,100%);line-height: 80px; 
+		.wh(165px,80px);line-height: 80px; .fl;
 		i{
 			display: inline-block;.cur;.ft(22px);.mr(30px); color: #fff;
+		}
+	}
+	.baseBarBox{
+		.wh(535px,80px);.fl;.boxsize();padding:10px 0;
+		p.singer{
+			.lh(25px); color: #fff;
+		}
+	}
+	.timeLine{
+		.lh(25px);
+		.start,.end{
+			display: inline-block;width: 40px;.tc(); color: #fff;
+		}
+		.basebar{
+			display: inline-block;.wh(400px,5px);background: #fff;.bor_ra(2px);vertical-align: middle;
+			.progressbar{
+				display: inline-block;.wh(0px,5px);background: red;.bor_ra(2px);vertical-align: top;
+			}
 		}
 	}
 }

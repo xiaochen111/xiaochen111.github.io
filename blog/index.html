@@ -31,7 +31,7 @@
 	    </div>
 	</div> -->
     <!-- ./file/dream.mp3 -->
-    <audio   src="./file/dream.mp3" style="display:none">
+    <audio   src="" style="display:none">
         你的浏览器不支持audio标签
     </audio>
 
@@ -39,7 +39,19 @@
         <div class="play-control">
             <i class="fa fa-backward m-play btn1" title="上一曲"></i>
             <i class="fa fa-play m-change btn2" title="播放/暂停" onclick='player.playFn(this)'></i>
-            <i class="fa fa-forward m-next btn3" title="下一曲"></i>
+            <i class="fa fa-forward m-next btn3" title="下一曲" onclick="player.nextSongFn()"></i>
+        </div>
+        <div class="baseBarBox">
+            <p class="singer"></p>
+            <div class="timeLine">
+                <span class="start">00:00</span>
+                <!-- 进度条 -->
+                <span class="basebar">
+                    <span class="progressbar"></span>
+                </span>
+                <!-- 进度条 end -->
+                <span class="end">04:11</span>
+            </div>
         </div>
     </div>
 
@@ -50,34 +62,12 @@
 
     <script src="./js/jquery-1.9.1.min.js"></script>
     <script src="./js/banner.js"></script>
+    <script src="./js/player.js"></script>
     <script>
     	$(function(){
             //banner
     		// $("#slide_5").slide({ trigger: "click", effect: "scrollx", auto: true, seamless: true, duration: 600, easing: "easeOutCirc" });
-
     	})
-
-
-
-        var myAudio = $("audio")[0];
-        var singerInfo = [{
-            singer:'任贤齐',
-            song:'有梦的人'
-        }];
-
-        var player = {
-            play:false, //false 暂停  / true 播放
-            playFn:function(obj){ //播放方法
-                if(!this.play){
-                    myAudio.play();
-                    $(obj).removeClass('fa-play').addClass('fa-pause');
-                }else{
-                    myAudio.pause();
-                    $(obj).removeClass('fa-pause').addClass('fa-play');
-                }
-                this.play = !this.play;
-            }
-        }
     </script>
 </body>
 </html>
