@@ -42,8 +42,18 @@ var player = {
         this.initSingerInfo();
         myAudio.play();
         var basebarfn = this.basebarFn;
-        setTimeout(basebarfn,100)
+        setTimeout(basebarfn,100);
         // this.basebarFn();
+    },
+    upperSong:function(){
+        this.num--;
+        if(this.num===-1){
+            this.num = this.singerInfo.length-1;
+        }
+        this.initSingerInfo();
+        myAudio.play();
+        var basebarfn = this.basebarFn;
+        setTimeout(basebarfn,100);
     },
     basebarFn:function(){
         var end = parseInt(myAudio.duration);

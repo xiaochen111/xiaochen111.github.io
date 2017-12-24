@@ -37,7 +37,7 @@
 
     <div class="radioBox">
         <div class="play-control">
-            <i class="fa fa-backward m-play btn1" title="上一曲"></i>
+            <i class="fa fa-backward m-play btn1" title="上一曲" onclick="player.upperSong()"></i>
             <i class="fa fa-play m-change btn2" title="播放/暂停" onclick='player.playFn(this)'></i>
             <i class="fa fa-forward m-next btn3" title="下一曲" onclick="player.nextSongFn()"></i>
         </div>
@@ -61,6 +61,7 @@
 
 
     <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/mouse.js"></script>
     <script src="./js/banner.js"></script>
     <script src="./js/player.js"></script>
     <script>
